@@ -107,6 +107,29 @@ public class Citizen {
         return 1 + confidence * (ideology - 1);
     }
 
+    public void takeBroadcast(IBroadcast broadcast){
+        double dist = broadcast.getIdeology() - this.ideology;
+        double impact = (1-confidence) * broadcast.getStrength();
+        this.ideology += dist * impact;
+        this.confidence += Const.RESTING_CONFIDENCE_INCREASE; //bolster a little bit.
+    }
+
+    /**
+     * Vote, given a list of candidates.
+     * @param options The party options listed on the ballot.
+     * @return
+     */
+    public Party vote(ArrayList<Party> options){
+        //simple proximity voting
+        Party closest = options.get(0);
+        for(Party p : options){
+            if(Math.abs(p.ideology - ideology) < Math.abs(closest.ideology - ideology)){
+                closest = p;
+            }
+        }
+
+        return closest;
+    }
 
     @Override
     public String toString(){

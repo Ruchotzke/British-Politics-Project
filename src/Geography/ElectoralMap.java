@@ -2,6 +2,9 @@ package Geography;
 
 import Data.Database;
 import Data.Row;
+import Simulation.FundingSchemes.ConstantFunding;
+import Simulation.Party;
+import Simulation.UK_PARTY;
 import Utilities.Const;
 
 import java.util.ArrayList;
@@ -16,6 +19,12 @@ public class ElectoralMap {
     private HashMap<String, Constituency> name_constituencies;                  /* Constituencies by name */
     private HashMap<Region, ArrayList<Constituency>> region_constituencies;     /* Constituencies by Region */
     private HashMap<Country, ArrayList<Constituency>> country_constituencies;   /* Constituencies by Country */
+
+    public ArrayList<Party> politicalParties;
+
+    /* Results Information */
+    public HashMap<Party, Integer> individual_votes;
+    public HashMap<Party, Integer> electoral_seats;
 
     public ElectoralMap(){
         name_constituencies = new HashMap<>();
@@ -38,6 +47,14 @@ public class ElectoralMap {
             insertConstituency(c);
         }
         System.out.println("Map built with " + name_constituencies.size() + " constituencies.");
+    }
+
+    public void buildParties(){
+        politicalParties = new ArrayList<>();
+        politicalParties.add(new Party(UK_PARTY.Conservative, new ConstantFunding(0)));
+        politicalParties.add(new Party(UK_PARTY.Labour, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.Liberal_Democrats, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.SNP, new ConstantFunding(60)));
     }
 
     /**
@@ -225,9 +242,14 @@ public class ElectoralMap {
     public void simulateOneDay(){
         ArrayList<Constituency> constituencies = getAllConstituencies();
 
+        //First do communications in each constituency, then do party broadcasts
         for(Constituency c : constituencies){
             c.inConstituencyCommunication(Const.AVERAGE_COMMUNICATIONS);
+            for(Party p : politicalParties){
+                c.inConstituencyBroadcast(p.partyBroadcast());
+            }
         }
+
     }
 
     public Constituency getLeftmostConstituency(){
@@ -248,5 +270,40 @@ public class ElectoralMap {
         }
 
         return right;
+    }
+
+    /**
+     * Trigger an election, and compile the results into a hashmap.
+     * @return
+     */
+    public void electionResults(){
+        individual_votes = new HashMap<>();
+        electoral_seats = new HashMap<>();
+
+        //first put all of the parties in
+        for(Party p : politicalParties){
+            individual_votes.put(p, 0);
+            electoral_seats.put(p, 0);
+        }
+
+        //now vote in each constituency, compiling the results as we go.
+        ArrayList<Constituency> constituencies = getAllConstituencies();
+        for(Constituency c : constituencies){
+            HashMap<Party, Integer> constituencyResults = c.electionResults(politicalParties);
+            //find the winner (FPTP)
+            //put the individual votes into the appropriate slot
+            Party winner = null;
+            int winnerVotes = 0;
+            for(Party p : politicalParties){
+                if(constituencyResults.containsKey(p)){
+                    individual_votes.put(p, individual_votes.get(p) + constituencyResults.get(p));
+                    if(constituencyResults.get(p) > winnerVotes){
+                        winnerVotes = constituencyResults.get(p);
+                        winner = p;
+                    }
+                }
+            }
+            electoral_seats.put(winner, electoral_seats.get(winner) + 1);
+        }
     }
 }

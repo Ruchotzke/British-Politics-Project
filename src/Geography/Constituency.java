@@ -1,12 +1,11 @@
 package Geography;
 
 import Simulation.Citizen;
+import Simulation.IBroadcast;
+import Simulation.Party;
 import Utilities.Const;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * A constituency is a geographic location with demographic data.
@@ -180,6 +179,30 @@ public class Constituency {
             }
         }
     }
+
+    public void inConstituencyBroadcast(IBroadcast broadcast){
+        for(Citizen c : citizenList){
+            c.takeBroadcast(broadcast);
+        }
+    }
+
+    /**
+     * Compile the electoral votes for this constituency.
+     * @param options The options for this ballot.
+     * @return A hashmap converting parties to votes.
+     */
+    public HashMap<Party, Integer> electionResults(ArrayList<Party> options){
+        HashMap<Party, Integer> results = new HashMap<>();
+
+        for(Citizen c : citizenList){
+            Party choice = c.vote(options);
+            if(!results.containsKey(choice)) results.put(choice, 0);
+            results.put(choice, results.get(choice) + 1);
+        }
+
+        return results;
+    }
+
 
     @Override
     public String toString(){

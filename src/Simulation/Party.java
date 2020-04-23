@@ -1,5 +1,6 @@
 package Simulation;
 
+import Simulation.FundingSchemes.IFundingScheme;
 import Utilities.Const;
 
 /**
@@ -10,13 +11,17 @@ public class Party {
 
     public final String name;
     public final double ideology;
-    public final int funding; //base + party dues
+    public int funding; //base + party dues
+
+    private int dayOfSimulation = 0;
+    private IFundingScheme fundingScheme;
 
     /**
      * Construct a new party using the supplied identifier.
      * @param party
      */
-    public Party(UK_PARTY party){
+    public Party(UK_PARTY party, IFundingScheme fundingScheme){
+        this.fundingScheme = fundingScheme;
         switch(party){
             case Conservative:
                 name = "Conservative";
@@ -85,5 +90,18 @@ public class Party {
                 break;
         }
 
+    }
+
+    public void incrementDay(){
+        dayOfSimulation += 1;
+    }
+
+    public IBroadcast partyBroadcast(){
+        if(funding > 0){
+            funding -= fundingScheme.getSpending(dayOfSimulation);
+            return new PartyBroadcast(fundingScheme.getSpending(dayOfSimulation), ideology);
+        } else {
+            return new PartyBroadcast(0, ideology); //no more money :(
+        }
     }
 }
