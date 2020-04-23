@@ -6,6 +6,7 @@ import Utilities.Const;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * A constituency is a geographic location with demographic data.
@@ -41,8 +42,6 @@ public class Constituency {
         this.voteResult17 = voteResult17;
 
         citizenList = generateCitizens();
-
-//        System.out.println(name + " has been generated with " + citizenList.size() + " citizens.");
     }
 
     private List<Citizen> generateCitizens(){
@@ -58,81 +57,132 @@ public class Constituency {
 
         //generate the conservative voters
         for(;numGenerated < voteResult17.get("Conservative").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_CONSERVATIVE, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_CONSERVATIVE, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now labour
         for(;numGenerated < oldTotal + voteResult17.get("Conservative").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_LABOUR, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_LABOUR, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now LibDem
         for(;numGenerated < oldTotal + voteResult17.get("Liberal Democrats").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_LIBDEM, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_LIBDEM, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now UKIP
         for(;numGenerated < oldTotal + voteResult17.get("UKIP").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_UKIP, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_UKIP, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now Greens
         for(;numGenerated < oldTotal + voteResult17.get("Green").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_GREEN, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_GREEN, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now SNP
         for(;numGenerated < oldTotal + voteResult17.get("SNP").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_SNP, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_SNP, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now PC
         for(;numGenerated < oldTotal + voteResult17.get("Plaid Cymru").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_PC, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_PC, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now DUP
         for(;numGenerated < oldTotal + voteResult17.get("DUP").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_DUP, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_DUP, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now Sinn Fein
         for(;numGenerated < oldTotal + voteResult17.get("Sinn Fein").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_SINNFEIN, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_SINNFEIN, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now SDLP
         for(;numGenerated < oldTotal + voteResult17.get("SDLP").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_SDLP, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_SDLP, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now UUP
         for(;numGenerated < oldTotal + voteResult17.get("UUP").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_UUP, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_UUP, 1, 1));
         }
         oldTotal = numGenerated;
 
         //now Alliance
         for(;numGenerated < oldTotal + voteResult17.get("Alliance").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_ALLIANCE, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_ALLIANCE, 1, 1));
         }
         oldTotal = numGenerated;
 
         //the rest are all "other" people
         for(; numGenerated < totalCitizens; numGenerated++){
-            arr.add(new Citizen(this, Const.IDEOLOGY_UNALIGNED, 1));
+            arr.add(new Citizen(this, Const.IDEOLOGY_UNALIGNED, 1, 1));
+        }
+
+
+        //now distribute activation, interactivity, and confidence.
+        //TODO make this less random.
+        //randomly sprinkle interactivity and activation
+        Random rand = new Random();
+        for(Citizen c : arr){
+            c.interactivity = rand.nextDouble();
+            c.activation = rand.nextDouble();
+            c.confidence = rand.nextDouble();
         }
 
         return arr;
+    }
+
+    /**
+     * Get the average ideology for the citizens in this
+     * constituency.
+     * @return
+     */
+    public double getAverage(){
+        double total = 0;
+        for(Citizen c : citizenList){
+            total += c.ideology;
+        }
+
+        return total / citizenList.size();
+    }
+
+    public double getEffectiveAverage(){
+        double total = 0;
+        for(Citizen c : citizenList){
+            total += c.getEffectiveIdeology();
+        }
+
+        return total / citizenList.size();
+    }
+
+    public void inConstituencyCommunication(int numConnections){
+        Random rand = new Random();
+
+        for(Citizen c : citizenList){
+            //generate a "normal" amount of connections around the supplied value.
+            int connections = (int)(numConnections * (rand.nextGaussian() + 1.0));
+            for(int i = 0; i < connections; i++){
+                c.communicateWith(citizenList.get(rand.nextInt(citizenList.size())));
+            }
+        }
+    }
+
+    @Override
+    public String toString(){
+        return "[Constituency] " + name + ", region: " + region + ", size: " + constituencySize + ", average: " + getAverage() + ".";
     }
 }

@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1165e6c6-3b8a-42da-8da1-c36c149e3ee3" name="Default Changelist" comment="" />
+    <list default="true" id="64c1746e-d414-469f-9927-93049361d67c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/British-Politics-Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Geography/GeoUtilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/Party.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/UK_PARTY.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utilities/CitizenFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Geography/Constituency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Geography/Constituency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Geography/ElectoralMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Geography/ElectoralMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/Citizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/Citizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilities/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilities/PoliticalParty.java" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,96 +34,99 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Geography/ElectoralMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="187" column="42" selection-start-line="187" selection-start-column="42" selection-end-line="187" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getElectoralData#0;class#ElectoralMap#0" />
-                <element signature="method#getCountry#0;class#ElectoralMap#0" />
-                <element signature="method#getRegion#0;class#ElectoralMap#0" />
-                <element signature="method#insertConstituency#0;class#ElectoralMap#0" />
-                <element signature="method#getByName#0;class#ElectoralMap#0" />
-                <element signature="method#getByRegion#0;class#ElectoralMap#0" />
-                <element signature="method#getByRegion#1;class#ElectoralMap#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Geography/Constituency.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Simulation/Citizen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Main.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Geography/ElectoralMap.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="404">
+                  <caret line="246" column="31" selection-start-line="246" selection-start-column="31" selection-end-line="246" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Geography/Constituency.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="190">
+                  <caret line="95" column="44" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Simulation/Party.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+                  <folding>
+                    <element signature="method#Party#0;class#Party#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Simulation/UK_PARTY.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Utilities/Const.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="469">
+                  <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Singleton" />
-        <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/British-Politics-Project" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Simulation/ICitizen.java" />
-        <option value="$PROJECT_DIR$/src/Utilities/PoliticalParty.java" />
-        <option value="$PROJECT_DIR$/src/Simulation/Message.java" />
-        <option value="$PROJECT_DIR$/src/Database.java" />
-        <option value="$PROJECT_DIR$/src/Geography/PartyVote.java" />
-        <option value="$PROJECT_DIR$/src/Geography/Country.java" />
         <option value="$PROJECT_DIR$/src/Geography/Region.java" />
-        <option value="$PROJECT_DIR$/src/Readme.txt" />
-        <option value="$PROJECT_DIR$/src/Data/Database.java" />
-        <option value="$PROJECT_DIR$/src/Data/Row.java" />
-        <option value="$PROJECT_DIR$/src/Utilities/Constants.java" />
-        <option value="$PROJECT_DIR$/src/Utilities/Const.java" />
+        <option value="$PROJECT_DIR$/src/Geography/GeoUtilities.java" />
+        <option value="$PROJECT_DIR$/src/Utilities/CitizenFactory.java" />
         <option value="$PROJECT_DIR$/src/Simulation/Citizen.java" />
-        <option value="$PROJECT_DIR$/src/Geography/ElectoralMap.java" />
         <option value="$PROJECT_DIR$/src/Geography/Constituency.java" />
+        <option value="$PROJECT_DIR$/src/Geography/ElectoralMap.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Simulation/Message.java" />
+        <option value="$PROJECT_DIR$/src/Simulation/UK_PARTY.java" />
+        <option value="$PROJECT_DIR$/src/Utilities/Const.java" />
+        <option value="$PROJECT_DIR$/src/Simulation/Party.java" />
       </list>
     </option>
   </component>
@@ -111,52 +135,39 @@
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="British Politics Simulation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="British Politics Simulation" type="462c0819:PsiDirectoryNode" />
+              <item name="British-Politics-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="British-Politics-Project" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="British Politics Simulation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="British Politics Simulation" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="British Politics Simulation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="British Politics Simulation" type="462c0819:PsiDirectoryNode" />
+              <item name="British-Politics-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="British-Politics-Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="British Politics Simulation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="British Politics Simulation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="British Politics Simulation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="British Politics Simulation" type="462c0819:PsiDirectoryNode" />
+              <item name="British-Politics-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="British-Politics-Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Geography" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="British Politics Simulation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="British Politics Simulation" type="462c0819:PsiDirectoryNode" />
+              <item name="British-Politics-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="British-Politics-Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Simulation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="British Politics Simulation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="British Politics Simulation" type="462c0819:PsiDirectoryNode" />
+              <item name="British-Politics-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="British-Politics-Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Utilities" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -164,17 +175,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Ethan\Desktop\British Politics Simulation\Data" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -189,12 +199,9 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="British Politics Simulation" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <module name="British-Politics-Project" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -210,28 +217,26 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1165e6c6-3b8a-42da-8da1-c36c149e3ee3" name="Default Changelist" comment="" />
-      <created>1586989745751</created>
+      <changelist id="64c1746e-d414-469f-9927-93049361d67c" name="Default Changelist" comment="" />
+      <created>1587494806132</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1586989745751</updated>
-      <workItem from="1586989748291" duration="985000" />
-      <workItem from="1587077106805" duration="109000" />
-      <workItem from="1587159006908" duration="1898000" />
-      <workItem from="1587402835578" duration="3816000" />
-      <workItem from="1587406683670" duration="1364000" />
-      <workItem from="1587411522577" duration="1245000" />
-      <workItem from="1587418282535" duration="7955000" />
+      <updated>1587494806132</updated>
+      <workItem from="1587494809355" duration="6228000" />
+      <workItem from="1587503579426" duration="4725000" />
+      <workItem from="1587594191218" duration="1974000" />
+      <workItem from="1587660960840" duration="5549000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17372000" />
+    <option name="totallyTimeSpent" value="18476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13113007" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12846482" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -240,8 +245,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -266,449 +271,132 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Simulation/single.java" />
-    <entry file="file://$PROJECT_DIR$/src/Simulation/IParty.java" />
-    <entry file="file://$PROJECT_DIR$/src/Simulation/IMedia.java" />
-    <entry file="file://$PROJECT_DIR$/src/Simulation/ICitizen.java" />
-    <entry file="file://$PROJECT_DIR$/src/Messages/RawMessage.java" />
-    <entry file="file://$PROJECT_DIR$/src/Simulation/Message.java">
+    <entry file="file://$PROJECT_DIR$/British-Politics-Project.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="198">
+          <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+          <folding>
+            <element signature="e#10065#10066#0" expanded="true" />
+            <element signature="e#10148#10149#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utilities/PoliticalParty.java">
+    <entry file="file://$PROJECT_DIR$/src/Geography/GeoUtilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        <state relative-caret-position="561">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Geography/Country.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="69" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/UK GE 2010_2015_2017 V1_2 (+Brexit vote).csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
-          <column index="0" width="100" />
-          <column index="1" width="100" />
-          <column index="2" width="100" />
-          <column index="3" width="100" />
-          <column index="4" width="100" />
-          <column index="5" width="100" />
-          <column index="6" width="100" />
-          <column index="7" width="100" />
-          <column index="8" width="100" />
-          <column index="9" width="100" />
-          <column index="10" width="100" />
-          <column index="11" width="100" />
-          <column index="12" width="100" />
-          <column index="13" width="100" />
-          <column index="14" width="100" />
-          <column index="15" width="100" />
-          <column index="16" width="100" />
-          <column index="17" width="100" />
-          <column index="18" width="100" />
-          <column index="19" width="100" />
-          <column index="20" width="100" />
-          <column index="21" width="100" />
-          <column index="22" width="100" />
-          <column index="23" width="100" />
-          <column index="24" width="100" />
-          <column index="25" width="100" />
-          <column index="26" width="100" />
-          <column index="27" width="100" />
-          <column index="28" width="100" />
-          <column index="29" width="100" />
-          <column index="30" width="100" />
-          <column index="31" width="100" />
-          <column index="32" width="100" />
-          <column index="33" width="100" />
-          <column index="34" width="100" />
-          <column index="35" width="100" />
-          <column index="36" width="100" />
-          <column index="37" width="100" />
-          <column index="38" width="100" />
-          <column index="39" width="100" />
-          <column index="40" width="100" />
-          <column index="41" width="100" />
-          <column index="42" width="100" />
-          <column index="43" width="100" />
-          <column index="44" width="100" />
-          <column index="45" width="100" />
-          <column index="46" width="100" />
-          <column index="47" width="100" />
-          <column index="48" width="100" />
-          <column index="49" width="100" />
-          <column index="50" width="100" />
-          <column index="51" width="100" />
-          <column index="52" width="100" />
-          <column index="53" width="100" />
-          <column index="54" width="100" />
-          <column index="55" width="100" />
-          <column index="56" width="100" />
-          <column index="57" width="100" />
-          <column index="58" width="100" />
-          <column index="59" width="100" />
-          <column index="60" width="100" />
-          <column index="61" width="100" />
-          <column index="62" width="100" />
-          <column index="63" width="100" />
-          <column index="64" width="100" />
-          <column index="65" width="100" />
-          <column index="66" width="100" />
-          <column index="67" width="100" />
-          <column index="68" width="100" />
-          <column index="69" width="100" />
-          <column index="70" width="100" />
-          <column index="71" width="100" />
-          <column index="72" width="100" />
-          <column index="73" width="100" />
-          <column index="74" width="100" />
-          <column index="75" width="100" />
-          <column index="76" width="100" />
-          <column index="77" width="100" />
-          <column index="78" width="100" />
-          <column index="79" width="100" />
-          <column index="80" width="100" />
-          <column index="81" width="100" />
-          <column index="82" width="100" />
-          <column index="83" width="100" />
-          <column index="84" width="100" />
-          <column index="85" width="100" />
-          <column index="86" width="100" />
-          <column index="87" width="100" />
-          <column index="88" width="100" />
-          <column index="89" width="100" />
-          <column index="90" width="100" />
-          <column index="91" width="100" />
-          <column index="92" width="100" />
-          <column index="93" width="100" />
-          <column index="94" width="100" />
-          <column index="95" width="100" />
-          <column index="96" width="100" />
-          <column index="97" width="100" />
-          <column index="98" width="100" />
-          <column index="99" width="100" />
-          <column index="100" width="100" />
-          <column index="101" width="100" />
-          <column index="102" width="100" />
-          <column index="103" width="100" />
-          <column index="104" width="100" />
-          <column index="105" width="100" />
-          <column index="106" width="100" />
-          <column index="107" width="100" />
-          <column index="108" width="100" />
-          <column index="109" width="100" />
-          <column index="110" width="100" />
-          <column index="111" width="100" />
-          <column index="112" width="100" />
-          <column index="113" width="100" />
-          <column index="114" width="100" />
-          <column index="115" width="100" />
-          <column index="116" width="100" />
-          <column index="117" width="100" />
-          <column index="118" width="100" />
-          <column index="119" width="100" />
-          <column index="120" width="100" />
-          <column index="121" width="100" />
-          <column index="122" width="100" />
-          <column index="123" width="100" />
-          <column index="124" width="100" />
-          <column index="125" width="100" />
-          <column index="126" width="100" />
-          <column index="127" width="100" />
-          <column index="128" width="100" />
-          <column index="129" width="100" />
-          <column index="130" width="100" />
-          <column index="131" width="100" />
-          <column index="132" width="100" />
-          <column index="133" width="100" />
-          <column index="134" width="100" />
-          <column index="135" width="100" />
-          <column index="136" width="100" />
-          <column index="137" width="100" />
-          <column index="138" width="100" />
-          <column index="139" width="100" />
-          <column index="140" width="100" />
-          <column index="141" width="100" />
-          <column index="142" width="100" />
-          <column index="143" width="100" />
-          <column index="144" width="100" />
-          <column index="145" width="100" />
-          <column index="146" width="100" />
-          <column index="147" width="100" />
-          <column index="148" width="100" />
-          <column index="149" width="100" />
-          <column index="150" width="100" />
-          <column index="151" width="100" />
-          <column index="152" width="100" />
-          <column index="153" width="100" />
-          <column index="154" width="100" />
-          <column index="155" width="100" />
-          <column index="156" width="100" />
-          <column index="157" width="100" />
-          <column index="158" width="100" />
-          <column index="159" width="100" />
-          <column index="160" width="100" />
-          <column index="161" width="100" />
-          <column index="162" width="100" />
-          <column index="163" width="100" />
-          <column index="164" width="100" />
-          <column index="165" width="100" />
-          <column index="166" width="100" />
-          <column index="167" width="100" />
-          <column index="168" width="100" />
-          <column index="169" width="100" />
-          <column index="170" width="100" />
-          <column index="171" width="100" />
-          <column index="172" width="100" />
-          <column index="173" width="100" />
-          <column index="174" width="100" />
-          <column index="175" width="100" />
-          <column index="176" width="100" />
-          <column index="177" width="100" />
-          <column index="178" width="100" />
-          <column index="179" width="100" />
-          <column index="180" width="100" />
-          <column index="181" width="100" />
-          <column index="182" width="100" />
-          <column index="183" width="100" />
-          <column index="184" width="100" />
-          <column index="185" width="100" />
-          <column index="186" width="100" />
-          <column index="187" width="100" />
-          <column index="188" width="100" />
-          <column index="189" width="100" />
-          <column index="190" width="100" />
-          <column index="191" width="100" />
-          <column index="192" width="100" />
-          <column index="193" width="100" />
-          <column index="194" width="100" />
-          <column index="195" width="100" />
-          <column index="196" width="100" />
-          <column index="197" width="100" />
-          <column index="198" width="100" />
-          <column index="199" width="100" />
-          <column index="200" width="100" />
-          <column index="201" width="100" />
-          <column index="202" width="100" />
-          <column index="203" width="100" />
-          <column index="204" width="100" />
-          <column index="205" width="100" />
-          <column index="206" width="100" />
-          <column index="207" width="100" />
-          <column index="208" width="100" />
-          <column index="209" width="100" />
-          <column index="210" width="100" />
-          <column index="211" width="100" />
-          <column index="212" width="100" />
-          <column index="213" width="100" />
-          <column index="214" width="100" />
-          <column index="215" width="100" />
-          <column index="216" width="100" />
-          <column index="217" width="100" />
-          <column index="218" width="100" />
-          <column index="219" width="100" />
-          <column index="220" width="100" />
-          <column index="221" width="100" />
-          <column index="222" width="100" />
-          <column index="223" width="100" />
-          <column index="224" width="100" />
-          <column index="225" width="100" />
-          <column index="226" width="100" />
-          <column index="227" width="100" />
-          <column index="228" width="100" />
-          <column index="229" width="100" />
-          <column index="230" width="100" />
-          <column index="231" width="100" />
-          <column index="232" width="100" />
-          <column index="233" width="100" />
-          <column index="234" width="100" />
-          <column index="235" width="100" />
-          <column index="236" width="100" />
-          <column index="237" width="100" />
-          <column index="238" width="100" />
-          <column index="239" width="100" />
-          <column index="240" width="100" />
-          <column index="241" width="100" />
-          <column index="242" width="100" />
-          <column index="243" width="100" />
-          <column index="244" width="100" />
-          <column index="245" width="100" />
-          <column index="246" width="100" />
-          <column index="247" width="100" />
-          <column index="248" width="100" />
-          <column index="249" width="100" />
-          <column index="250" width="100" />
-          <column index="251" width="100" />
-          <column index="252" width="100" />
-          <column index="253" width="100" />
-          <column index="254" width="100" />
-          <column index="255" width="100" />
-          <column index="256" width="100" />
-          <column index="257" width="100" />
-          <column index="258" width="100" />
-          <column index="259" width="100" />
-          <column index="260" width="100" />
-          <column index="261" width="100" />
-          <column index="262" width="100" />
-          <column index="263" width="100" />
-          <column index="264" width="100" />
-          <column index="265" width="100" />
-          <column index="266" width="100" />
-          <column index="267" width="100" />
-          <column index="268" width="100" />
-          <column index="269" width="100" />
-          <column index="270" width="100" />
-          <column index="271" width="100" />
-          <column index="272" width="100" />
-          <column index="273" width="100" />
-          <column index="274" width="100" />
-          <column index="275" width="100" />
-          <column index="276" width="100" />
-          <column index="277" width="100" />
-          <column index="278" width="100" />
-          <column index="279" width="100" />
-          <column index="280" width="100" />
-          <column index="281" width="100" />
-          <column index="282" width="100" />
-          <column index="283" width="100" />
-          <column index="284" width="100" />
-          <column index="285" width="100" />
-          <column index="286" width="100" />
-          <column index="287" width="100" />
-          <column index="288" width="100" />
-          <column index="289" width="100" />
-          <column index="290" width="100" />
-          <column index="291" width="100" />
-          <column index="292" width="100" />
-          <column index="293" width="100" />
-          <column index="294" width="100" />
-          <column index="295" width="100" />
-          <column index="296" width="100" />
-          <column index="297" width="100" />
-          <column index="298" width="100" />
-          <column index="299" width="100" />
-          <column index="300" width="100" />
-          <column index="301" width="100" />
-          <column index="302" width="100" />
-          <column index="303" width="100" />
-          <column index="304" width="100" />
-          <column index="305" width="100" />
-          <column index="306" width="100" />
-          <column index="307" width="100" />
-          <column index="308" width="100" />
-          <column index="309" width="100" />
-          <column index="310" width="100" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="21" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Geography/Region.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Data/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="104" column="34" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Data/Row.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Geography/PartyVote.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utilities/Const.java">
+    <entry file="file://$PROJECT_DIR$/src/Utilities/CitizenFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="289">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Simulation/Citizen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        <state relative-caret-position="109">
+          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Geography/Constituency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="method#takeCommunication#0;class#Citizen#0" />
+            <element signature="e#3644#3645#0" expanded="true" />
+            <element signature="e#3707#3708#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Geography/ElectoralMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="187" column="42" selection-start-line="187" selection-start-column="42" selection-end-line="187" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getElectoralData#0;class#ElectoralMap#0" />
-            <element signature="method#getCountry#0;class#ElectoralMap#0" />
-            <element signature="method#getRegion#0;class#ElectoralMap#0" />
-            <element signature="method#insertConstituency#0;class#ElectoralMap#0" />
-            <element signature="method#getByName#0;class#ElectoralMap#0" />
-            <element signature="method#getByRegion#0;class#ElectoralMap#0" />
-            <element signature="method#getByRegion#1;class#ElectoralMap#0" />
-          </folding>
+        <state relative-caret-position="404">
+          <caret line="246" column="31" selection-start-line="246" selection-start-column="31" selection-end-line="246" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="187">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Geography/Constituency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="95" column="44" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utilities/PoliticalParty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Simulation/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Simulation/UK_PARTY.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utilities/Const.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Simulation/Party.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#Party#0;class#Party#0" />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

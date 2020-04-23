@@ -2,6 +2,7 @@ package Geography;
 
 import Data.Database;
 import Data.Row;
+import Utilities.Const;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -188,5 +189,64 @@ public class ElectoralMap {
             total += c.citizenList.size();
         }
         return total;
+    }
+
+    public ArrayList<Constituency> getAllConstituencies(){
+        ArrayList<Constituency> arr = new ArrayList<>();
+
+        for(Map.Entry constit : name_constituencies.entrySet()){
+            Constituency c = (Constituency) constit.getValue();
+            arr.add(c);
+        }
+
+        return arr;
+    }
+
+    public double getAverageIdeology(){
+        ArrayList<Constituency> consts = getAllConstituencies();
+        double total = 0;
+        for(Constituency c : consts){
+            total += c.getAverage();
+        }
+
+        return total / consts.size();
+    }
+
+    public double getAverageEffectiveIdeology(){
+        ArrayList<Constituency> consts = getAllConstituencies();
+        double total = 0;
+        for(Constituency c : consts){
+            total += c.getEffectiveAverage();
+        }
+
+        return total / consts.size();
+    }
+
+    public void simulateOneDay(){
+        ArrayList<Constituency> constituencies = getAllConstituencies();
+
+        for(Constituency c : constituencies){
+            c.inConstituencyCommunication(Const.AVERAGE_COMMUNICATIONS);
+        }
+    }
+
+    public Constituency getLeftmostConstituency(){
+        ArrayList<Constituency> constituencies = getAllConstituencies();
+        Constituency left = constituencies.get(0);
+        for(Constituency c : constituencies){
+            if(c.getAverage() < left.getAverage()) left = c;
+        }
+
+        return left;
+    }
+
+    public Constituency getRightmostConstituency(){
+        ArrayList<Constituency> constituencies = getAllConstituencies();
+        Constituency right = constituencies.get(0);
+        for(Constituency c : constituencies){
+            if(c.getAverage() > right.getAverage()) right = c;
+        }
+
+        return right;
     }
 }

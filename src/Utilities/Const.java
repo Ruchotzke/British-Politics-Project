@@ -9,8 +9,51 @@ public class Const {
      * The number of citizens simulated per actual
      * person.
      */
-    public static final double CITIZENS_PER_POPULATION = .1;
+    public static final double CITIZENS_PER_POPULATION = .01;
 
+    /**
+     * What percentage of the confidence difference should be
+     * made up in a booster interpersonal interaction.
+     */
+    public static final double BOOSTER_CONFIDENCE_DRAG = 0.2;
+
+    /**
+     * How much should ideology change in a minor confrontation
+     * for the loser.
+     */
+    public static final double BOOSTER_IDEOLOGICAL_DRAG = 0.07;
+
+    /**
+     * How much should ideology change in a major confrontation
+     * for the loser.
+     */
+    public static final double MAJOR_IDEOLOGICAL_DRAG = 0.15;
+
+    /**
+     * How much should the winner and loser change their confidence
+     * after a minor confrontation.
+     */
+    public static final double MINOR_WINNER_LOSER_CONF_CHANGE = 0.03;
+
+    /**
+     * How much should the winner and loser change their confidence
+     * after a major confrontation.
+     */
+    public static final double MAJOR_WINNER_LOSER_CONF_CHANGE = 0.08;
+
+    /**
+     * If trust falls below this level, the message being communicated
+     * will be ignored as rhetoric.
+     */
+    public static final double TRUST_LISTENING_CAP = 0.25;
+
+    /**
+     * The amount of confidence gained every turn when <code>Citizen.Rest()</code> is called.
+     */
+    public static final double RESTING_CONFIDENCE_INCREASE = 0.05;
+
+    /* Communications systems parameters */
+    public static final int AVERAGE_COMMUNICATIONS = 2;
 
     /* Political Party Ideology Values */ //TODO tweak these values
     public static final double IDEOLOGY_CONSERVATIVE = 1.4;
@@ -27,5 +70,19 @@ public class Const {
     public static final double IDEOLOGY_ALLIANCE = .9;
     public static final double IDEOLOGY_UNALIGNED = 1;
 
+    /* Political Party 2017 Vote Percentages */
+    public static final double POPULAR_CONSERVATIVE = .42;
+    public static final double POPULAR_LABOUR = .40;
+    public static final double POPULAR_LIBDEM = .07;
+    public static final double POPULAR_UKIP = .01;
+    public static final double POPULAR_GREEN = .01;
+    public static final double POPULAR_SNP = .05;
+    public static final double POPULAR_PC = .01;
+    public static final double POPULAR_DUP = .02;
+    public static final double POPULAR_SINNFEIN = .02;
+    public static final double POPULAR_SDLP = .01;
+    public static final double POPULAR_UUP = .01;
+    public static final double POPULAR_ALLIANCE = .01;
+    public static final double POPULAR_UNALIGNED = 0;
 
 }
