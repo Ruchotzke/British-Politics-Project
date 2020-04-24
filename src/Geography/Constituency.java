@@ -64,7 +64,7 @@ public class Constituency {
         oldTotal = numGenerated;
 
         //now labour
-        for(;numGenerated < oldTotal + voteResult17.get("Conservative").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
+        for(;numGenerated < oldTotal + voteResult17.get("Labour").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
             arr.add(new Citizen(this, Const.IDEOLOGY_LABOUR, 1, 1));
         }
         oldTotal = numGenerated;

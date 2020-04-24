@@ -12,6 +12,38 @@ public class Const {
     /* References to the big boy parties */
     public static ArrayList<Party> simulatedParties;
 
+    public static Party getPartyByName(String s){
+        s = s.toLowerCase();
+        switch(s){
+            case "conservative":
+                return simulatedParties.get(0);
+            case "labour":
+                return simulatedParties.get(1);
+            case "liberal democrats":
+                return simulatedParties.get(2);
+            case "snp":
+                return simulatedParties.get(3);
+            case "ukip":
+                return simulatedParties.get(4);
+            case "green":
+                return simulatedParties.get(5);
+            case "plaid cymru":
+                return simulatedParties.get(6);
+            case "dup":
+                return simulatedParties.get(7);
+            case "uup":
+                return simulatedParties.get(8);
+            case "sinn fein":
+                return simulatedParties.get(9);
+            case "sdlp":
+                return simulatedParties.get(10);
+            case "alliance":
+                return simulatedParties.get(11);
+            default:
+                throw new IllegalStateException();
+        }
+    }
+
     /**
      * The number of citizens simulated per actual
      * person.

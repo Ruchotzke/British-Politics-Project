@@ -99,7 +99,7 @@ public class ElectoralMap {
         votes.put("Plaid Cymru"     , new PartyVote("Plaid Cymru", pc, ((double)pc) / turnout));
         votes.put("DUP"             , new PartyVote("DUP", dup, ((double)dup) / turnout));
         votes.put("Sinn Fein"       , new PartyVote("Sinn Fein", sf, ((double)sf) / turnout));
-        votes.put("sinnFein"            , new PartyVote("sinnFein", sdlp, ((double)sdlp) / turnout));
+        votes.put("SDLP"            , new PartyVote("SDLP", sdlp, ((double)sdlp) / turnout));
         votes.put("UUP"             , new PartyVote("UUP", uup, ((double)uup) / turnout));
         votes.put("Alliance"        , new PartyVote("Alliance", alliance, ((double)alliance) / turnout));
         votes.put("Other"           , new PartyVote("Other", other, ((double)other) / turnout));
