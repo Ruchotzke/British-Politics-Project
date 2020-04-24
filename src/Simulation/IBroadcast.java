@@ -7,4 +7,6 @@ public interface IBroadcast {
     int getCost();
 
     double getIdeology();
+
+    String toString();
 }

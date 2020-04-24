@@ -4,8 +4,11 @@ import Simulation.Citizen;
 import Simulation.IBroadcast;
 import Simulation.Party;
 import Utilities.Const;
+import sun.management.StackTraceElementCompositeData;
 
 import java.util.*;
+
+import static Geography.ElectoralMap.removeIrishParties;
 
 /**
  * A constituency is a geographic location with demographic data.
@@ -108,8 +111,8 @@ public class Constituency {
         }
         oldTotal = numGenerated;
 
-        //now SDLP
-        for(;numGenerated < oldTotal + voteResult17.get("SDLP").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
+        //now sinnFein
+        for(;numGenerated < oldTotal + voteResult17.get("sinnFein").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
             arr.add(new Citizen(this, Const.IDEOLOGY_SDLP, 1, 1));
         }
         oldTotal = numGenerated;
@@ -193,9 +196,30 @@ public class Constituency {
      */
     public HashMap<Party, Integer> electionResults(ArrayList<Party> options){
         HashMap<Party, Integer> results = new HashMap<>();
+        ArrayList<Party> newOptions = new ArrayList<Party>();
+        newOptions.addAll(options);
+
+        switch(country){
+            case Northern_Ireland:
+                newOptions = ElectoralMap.removeNonIrishParties(options);
+                break;
+            case England:
+                newOptions = ElectoralMap.removeScottishParties(options);
+                newOptions = ElectoralMap.removeIrishParties(newOptions);
+                newOptions = ElectoralMap.removeWelshParties(newOptions);
+                break;
+            case Wales:
+                newOptions = ElectoralMap.removeIrishParties(options);
+                newOptions = ElectoralMap.removeScottishParties(newOptions);
+                break;
+            case Scotland:
+                newOptions = ElectoralMap.removeWelshParties(options);
+                newOptions = ElectoralMap.removeIrishParties(newOptions);
+                break;
+        }
 
         for(Citizen c : citizenList){
-            Party choice = c.vote(options);
+            Party choice = c.vote(newOptions);
             if(!results.containsKey(choice)) results.put(choice, 0);
             results.put(choice, results.get(choice) + 1);
         }

@@ -1,7 +1,9 @@
 package Simulation;
 
 import Geography.Constituency;
+import Geography.Country;
 import Utilities.Const;
+import Utilities.Utilities;
 
 import java.util.ArrayList;
 
@@ -63,8 +65,6 @@ public class Citizen {
             //slight confidence changes (down loser, up winner)
             lessConfident.confidence -= Const.MINOR_WINNER_LOSER_CONF_CHANGE;
             moreConfident.confidence += Const.MINOR_WINNER_LOSER_CONF_CHANGE;
-            lessConfident.confidence = Math.min(1, lessConfident.confidence);
-            moreConfident.confidence = Math.min(1, moreConfident.confidence);
         }
         else
         {
@@ -80,12 +80,14 @@ public class Citizen {
                 winner.confidence += Const.MAJOR_WINNER_LOSER_CONF_CHANGE;
                 loser.confidence -= Const.MAJOR_WINNER_LOSER_CONF_CHANGE;
 
-                winner.confidence = Math.min(1, winner.confidence);
-                loser.confidence = Math.min(1, loser.confidence);
-
                 loser.ideology += (winner.ideology - loser.ideology) * trust * Const.MAJOR_IDEOLOGICAL_DRAG;
             }
         }
+
+        Utilities.clamp(this.ideology, 0, 2);
+        Utilities.clamp(this.confidence, 0, 1);
+        Utilities.clamp(other.ideology, 0, 2);
+        Utilities.clamp(other.confidence, 0, 1);
 
     }
 
@@ -94,7 +96,7 @@ public class Citizen {
      * to increase (over time).
      */
     public void rest(){
-        confidence += Const.RESTING_CONFIDENCE_INCREASE;
+        confidence = Utilities.clamp(confidence + Const.RESTING_CONFIDENCE_INCREASE, 0, 1);
     }
 
     /**
@@ -110,8 +112,11 @@ public class Citizen {
     public void takeBroadcast(IBroadcast broadcast){
         double dist = broadcast.getIdeology() - this.ideology;
         double impact = (1-confidence) * broadcast.getStrength();
-        this.ideology += dist * impact;
+        this.ideology += dist * impact * Const.BROADCAST_IMPACT;
         this.confidence += Const.RESTING_CONFIDENCE_INCREASE; //bolster a little bit.
+
+        this.ideology = Utilities.clamp(this.ideology, 0, 2);
+        this.confidence = Utilities.clamp(this.confidence, 0, 1);
     }
 
     /**
@@ -127,8 +132,25 @@ public class Citizen {
                 closest = p;
             }
         }
+        //if the found party is a close match, use it
+        if(closest.ideology - ideology < Const.PROXIMITY_VOTING_THRESHOLD) return closest;
 
-        return closest;
+        //now for directional voting
+        if(ideology < 1){
+            //a vote for the left
+            if(constituency.country == Country.Northern_Ireland){
+                return Const.sinnFein;
+            } else {
+                return Const.labour;
+            }
+        } else {
+            //a vote for the right
+            if(constituency.country == Country.Northern_Ireland){
+                return Const.DUP;
+            } else {
+                return Const.conservative;
+            }
+        }
     }
 
     @Override

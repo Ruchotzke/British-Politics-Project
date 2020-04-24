@@ -97,11 +97,12 @@ public class Party {
     }
 
     public IBroadcast partyBroadcast(){
-        if(funding > 0){
-            funding -= fundingScheme.getSpending(dayOfSimulation);
-            return new PartyBroadcast(fundingScheme.getSpending(dayOfSimulation), ideology);
-        } else {
-            return new PartyBroadcast(0, ideology); //no more money :(
-        }
+        return new PartyBroadcast(fundingScheme.getSpending(dayOfSimulation), ideology);
+//        if(funding > 0){
+//            funding -= fundingScheme.getSpending(dayOfSimulation);
+//            return new PartyBroadcast(fundingScheme.getSpending(dayOfSimulation), ideology);
+//        } else {
+//            return new PartyBroadcast(0, ideology); //no more money :(
+//        }
     }
 }

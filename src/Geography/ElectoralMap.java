@@ -25,6 +25,7 @@ public class ElectoralMap {
     /* Results Information */
     public HashMap<Party, Integer> individual_votes;
     public HashMap<Party, Integer> electoral_seats;
+    public int total_votes = 0;
 
     public ElectoralMap(){
         name_constituencies = new HashMap<>();
@@ -51,10 +52,25 @@ public class ElectoralMap {
 
     public void buildParties(){
         politicalParties = new ArrayList<>();
-        politicalParties.add(new Party(UK_PARTY.Conservative, new ConstantFunding(0)));
+        politicalParties.add(new Party(UK_PARTY.Conservative, new ConstantFunding(60)));
         politicalParties.add(new Party(UK_PARTY.Labour, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.Liberal_Democrats, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.Liberal_Democrats, new ConstantFunding(20)));
         politicalParties.add(new Party(UK_PARTY.SNP, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.UKIP, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.Green, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.Plaid_Cymru, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.DUP, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.UUP, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.Sinn_Fein, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.SDLP, new ConstantFunding(60)));
+        politicalParties.add(new Party(UK_PARTY.Alliance, new ConstantFunding(60)));
+
+        //also set the static references
+        Const.conservative = politicalParties.get(0);
+        Const.labour = politicalParties.get(1);
+        Const.DUP = politicalParties.get(7);
+        Const.sinnFein = politicalParties.get(9);
+
     }
 
     /**
@@ -89,7 +105,7 @@ public class ElectoralMap {
         votes.put("Plaid Cymru"     , new PartyVote("Plaid Cymru", pc, ((double)pc) / turnout));
         votes.put("DUP"             , new PartyVote("DUP", dup, ((double)dup) / turnout));
         votes.put("Sinn Fein"       , new PartyVote("Sinn Fein", sf, ((double)sf) / turnout));
-        votes.put("SDLP"            , new PartyVote("SDLP", sdlp, ((double)sdlp) / turnout));
+        votes.put("sinnFein"            , new PartyVote("sinnFein", sdlp, ((double)sdlp) / turnout));
         votes.put("UUP"             , new PartyVote("UUP", uup, ((double)uup) / turnout));
         votes.put("Alliance"        , new PartyVote("Alliance", alliance, ((double)alliance) / turnout));
         votes.put("Other"           , new PartyVote("Other", other, ((double)other) / turnout));
@@ -98,14 +114,14 @@ public class ElectoralMap {
     }
 
     public static Country getCountry(String s){
-        switch(s.toLowerCase()){
+        switch(s){
             case "england":
                 return Country.England;
-            case "Northern Ireland":
+            case "northern ireland":
                 return Country.Northern_Ireland;
-            case "Scotland":
+            case "scotland":
                 return Country.Scotland;
-            case "Wales":
+            case "wales":
                 return Country.Wales;
             default:
                 return Country.Other;
@@ -244,10 +260,11 @@ public class ElectoralMap {
 
         //First do communications in each constituency, then do party broadcasts
         for(Constituency c : constituencies){
-            c.inConstituencyCommunication(Const.AVERAGE_COMMUNICATIONS);
-            for(Party p : politicalParties){
-                c.inConstituencyBroadcast(p.partyBroadcast());
-            }
+            //c.inConstituencyCommunication(Const.AVERAGE_COMMUNICATIONS);
+            c.inConstituencyBroadcast(politicalParties.get(1).partyBroadcast());
+//            for(Party p : politicalParties){
+//                c.inConstituencyBroadcast(p.partyBroadcast());
+//            }
         }
 
     }
@@ -279,6 +296,7 @@ public class ElectoralMap {
     public void electionResults(){
         individual_votes = new HashMap<>();
         electoral_seats = new HashMap<>();
+        total_votes = 0;
 
         //first put all of the parties in
         for(Party p : politicalParties){
@@ -297,6 +315,7 @@ public class ElectoralMap {
             for(Party p : politicalParties){
                 if(constituencyResults.containsKey(p)){
                     individual_votes.put(p, individual_votes.get(p) + constituencyResults.get(p));
+                    total_votes += constituencyResults.get(p);
                     if(constituencyResults.get(p) > winnerVotes){
                         winnerVotes = constituencyResults.get(p);
                         winner = p;
@@ -305,5 +324,66 @@ public class ElectoralMap {
             }
             electoral_seats.put(winner, electoral_seats.get(winner) + 1);
         }
+    }
+
+
+    /**
+     * Remove the scottish parties from this list of parties.
+     * @param parties
+     */
+    public static ArrayList<Party> removeScottishParties(ArrayList<Party> parties){
+        ArrayList<Party> ret = new ArrayList<>();
+        for(Party p : parties){
+            if(!p.name.equals("Scottish National Party")) ret.add(p);
+        }
+        return ret;
+    }
+
+    /**
+     * Remove the scottish parties from this list of parties.
+     * @param parties
+     */
+    public static ArrayList<Party> removeWelshParties(ArrayList<Party> parties){
+        ArrayList<Party> ret = new ArrayList<>();
+        for(Party p : parties){
+            if(!p.name.equals("Plaid Cymru")) ret.add(p);
+        }
+        return ret;
+    }
+
+    /**
+     * Remove the scottish parties from this list of parties.
+     * @param parties
+     */
+    public static ArrayList<Party> removeIrishParties(ArrayList<Party> parties){
+        ArrayList<Party> ret = new ArrayList<>();
+        for(Party p : parties){
+            if(!p.name.equals("Democratic Unionist Party")
+            && !p.name.equals("Sinn Fein")
+            && !p.name.equals("Social Democratic Liberal Party")
+            && !p.name.equals("Ulster Unionist Party")
+            && !p.name.equals("Alliance of Northern Ireland")) ret.add(p);
+        }
+
+        return ret;
+    }
+
+    /**
+     * Remove the scottish parties from this list of parties.
+     * @param parties
+     */
+    public static ArrayList<Party> removeNonIrishParties(ArrayList<Party> parties){
+        ArrayList<Party> toUse = new ArrayList<>();
+        for (Party p : parties) {
+            if (p.name.equals("Democratic Unionist Party")
+                    || p.name.equals("Sinn Fein")
+                    || p.name.equals("Social Democratic Liberal Party")
+                    || p.name.equals("Ulster Unionist Party")
+                    || p.name.equals("Alliance of Northern Ireland")) {
+                toUse.add(p);
+            }
+        }
+
+        return toUse;
     }
 }

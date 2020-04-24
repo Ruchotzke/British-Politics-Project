@@ -1,9 +1,17 @@
 package Utilities;
 
+import Simulation.Party;
+
 /**
  * A utility class for holding simulation settings.
  */
 public class Const {
+
+    /* References to the big boy parties */
+    public static Party conservative;
+    public static Party labour;
+    public static Party sinnFein;
+    public static Party DUP;
 
     /**
      * The number of citizens simulated per actual
@@ -52,10 +60,16 @@ public class Const {
      */
     public static final double RESTING_CONFIDENCE_INCREASE = 0.05;
 
+    /**
+     * How close to a party does a citizen need to be to vote for it.
+     */
+    public static final double PROXIMITY_VOTING_THRESHOLD = 0.15;
+
     /* Communications systems parameters */
     public static final int AVERAGE_COMMUNICATIONS = 2;
+    public static final double BROADCAST_IMPACT = 0.15;
 
-    /* Political Party Ideology Values */ //TODO tweak these values
+    /* Political Party Ideology Values */
     public static final double IDEOLOGY_CONSERVATIVE = 1.4;
     public static final double IDEOLOGY_LABOUR = .8;
     public static final double IDEOLOGY_LIBDEM = 1.1;

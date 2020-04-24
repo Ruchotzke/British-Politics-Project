@@ -25,20 +25,24 @@ public class Main {
 
         //Election Time!
         map.electionResults();
-        HashMap<Party, Integer> results = map.electoral_seats;
-        System.out.println("Election Results:");
-        for(Party p : map.politicalParties){
-            System.out.println(p.name + " : " + results.get(p));
+        printElectoralResults();
+        for(int i = 0; i < 365; i++){
+            map.simulateOneDay();
+
         }
+        map.electionResults();
+        printElectoralResults();
 
-//
-//        for(int i = 0; i < 100; i++){
-//            map.simulateOneDay();
-//            System.out.println("[" + i + "]" + map.getAverageIdeology() + ", " + map.getAverageIdeology());
-//            System.out.println("[" + i + "][left] " + map.getLeftmostConstituency().getAverage());
-//            System.out.println("[" + i + "][right] " + map.getRightmostConstituency().getAverage());
-//            System.out.println("======================================================");
-//        }
+    }
 
+    public static void printElectoralResults(){
+        HashMap<Party, Integer> results = map.electoral_seats;
+        System.out.println("=====================================================================================");
+        System.out.println("Election Results: " + map.getAverageIdeology() + ".");
+        System.out.println("=====================================================================================");
+        for(Party p : map.politicalParties){
+            System.out.printf("%35s : %3d seats with %5.1f percent of the vote.%n", p.name, results.get(p), (double)map.individual_votes.get(p) / map.total_votes * 100.0);
+        }
+        System.out.println("=====================================================================================");
     }
 }
