@@ -20,8 +20,6 @@ public class ElectoralMap {
     private HashMap<Region, ArrayList<Constituency>> region_constituencies;     /* Constituencies by Region */
     private HashMap<Country, ArrayList<Constituency>> country_constituencies;   /* Constituencies by Country */
 
-    public ArrayList<Party> politicalParties;
-
     /* Results Information */
     public HashMap<Party, Integer> individual_votes;
     public HashMap<Party, Integer> electoral_seats;
@@ -51,25 +49,21 @@ public class ElectoralMap {
     }
 
     public void buildParties(){
-        politicalParties = new ArrayList<>();
-        politicalParties.add(new Party(UK_PARTY.Conservative, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.Labour, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.Liberal_Democrats, new ConstantFunding(20)));
-        politicalParties.add(new Party(UK_PARTY.SNP, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.UKIP, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.Green, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.Plaid_Cymru, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.DUP, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.UUP, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.Sinn_Fein, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.SDLP, new ConstantFunding(60)));
-        politicalParties.add(new Party(UK_PARTY.Alliance, new ConstantFunding(60)));
+        Const.simulatedParties = new ArrayList<>();
+        Const.simulatedParties.add(new Party(UK_PARTY.Conservative, new ConstantFunding(60)));
+        Const.simulatedParties.add(new Party(UK_PARTY.Labour, new ConstantFunding(60)));
+        Const.simulatedParties.add(new Party(UK_PARTY.Liberal_Democrats, new ConstantFunding(20)));
+        Const.simulatedParties.add(new Party(UK_PARTY.SNP, new ConstantFunding(60)));
+        Const.simulatedParties.add(new Party(UK_PARTY.UKIP, new ConstantFunding(60)));
+        Const.simulatedParties.add(new Party(UK_PARTY.Green, new ConstantFunding(60)));
+        Const.simulatedParties.add(new Party(UK_PARTY.Plaid_Cymru, new ConstantFunding(60)));
+        Const.simulatedParties.add(new Party(UK_PARTY.DUP, new ConstantFunding(60)));
+        Const.simulatedParties.add(new Party(UK_PARTY.UUP, new ConstantFunding(60)));
+        Const.simulatedParties.add(new Party(UK_PARTY.Sinn_Fein, new ConstantFunding(60)));
+        Const.simulatedParties.add(new Party(UK_PARTY.SDLP, new ConstantFunding(60)));
+        Const.simulatedParties.add(new Party(UK_PARTY.Alliance, new ConstantFunding(60)));
 
-        //also set the static references
-        Const.conservative = politicalParties.get(0);
-        Const.labour = politicalParties.get(1);
-        Const.DUP = politicalParties.get(7);
-        Const.sinnFein = politicalParties.get(9);
+
 
     }
 
@@ -261,7 +255,7 @@ public class ElectoralMap {
         //First do communications in each constituency, then do party broadcasts
         for(Constituency c : constituencies){
             //c.inConstituencyCommunication(Const.AVERAGE_COMMUNICATIONS);
-            c.inConstituencyBroadcast(politicalParties.get(1).partyBroadcast());
+            c.inConstituencyBroadcast(Const.simulatedParties.get(1).partyBroadcast());
 //            for(Party p : politicalParties){
 //                c.inConstituencyBroadcast(p.partyBroadcast());
 //            }
@@ -299,7 +293,7 @@ public class ElectoralMap {
         total_votes = 0;
 
         //first put all of the parties in
-        for(Party p : politicalParties){
+        for(Party p : Const.simulatedParties){
             individual_votes.put(p, 0);
             electoral_seats.put(p, 0);
         }
@@ -307,12 +301,12 @@ public class ElectoralMap {
         //now vote in each constituency, compiling the results as we go.
         ArrayList<Constituency> constituencies = getAllConstituencies();
         for(Constituency c : constituencies){
-            HashMap<Party, Integer> constituencyResults = c.electionResults(politicalParties);
+            HashMap<Party, Integer> constituencyResults = c.electionResults(Const.simulatedParties);
             //find the winner (FPTP)
             //put the individual votes into the appropriate slot
             Party winner = null;
             int winnerVotes = 0;
-            for(Party p : politicalParties){
+            for(Party p : Const.simulatedParties){
                 if(constituencyResults.containsKey(p)){
                     individual_votes.put(p, individual_votes.get(p) + constituencyResults.get(p));
                     total_votes += constituencyResults.get(p);

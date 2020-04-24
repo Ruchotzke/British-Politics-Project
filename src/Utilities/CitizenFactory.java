@@ -12,12 +12,8 @@ public class CitizenFactory {
 
         int citizensToGenerate = (int)(constituency.constituencySize * Const.CITIZENS_PER_POPULATION);
 
-        double[] ideologies = {
-          Const.IDEOLOGY_CONSERVATIVE,
-          Const.IDEOLOGY_LABOUR,
-          Const.IDEOLOGY_SNP,
-        };
-
+        int conservativeVotes = (int)(constituency.voteResult17.get("Conservative").totalVotes * Const.CITIZENS_PER_POPULATION);
+        int conservativeVotes = (int)(constituency.voteResult17.get("Conservative").totalVotes * Const.CITIZENS_PER_POPULATION);
 
         return citizens;
     }

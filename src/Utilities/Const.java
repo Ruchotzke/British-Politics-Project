@@ -2,16 +2,15 @@ package Utilities;
 
 import Simulation.Party;
 
+import java.util.ArrayList;
+
 /**
  * A utility class for holding simulation settings.
  */
 public class Const {
 
     /* References to the big boy parties */
-    public static Party conservative;
-    public static Party labour;
-    public static Party sinnFein;
-    public static Party DUP;
+    public static ArrayList<Party> simulatedParties;
 
     /**
      * The number of citizens simulated per actual

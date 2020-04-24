@@ -3,6 +3,7 @@ import Geography.Constituency;
 import Geography.ElectoralMap;
 import Simulation.Citizen;
 import Simulation.Party;
+import Utilities.Const;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,7 +41,7 @@ public class Main {
         System.out.println("=====================================================================================");
         System.out.println("Election Results: " + map.getAverageIdeology() + ".");
         System.out.println("=====================================================================================");
-        for(Party p : map.politicalParties){
+        for(Party p : Const.simulatedParties){
             System.out.printf("%35s : %3d seats with %5.1f percent of the vote.%n", p.name, results.get(p), (double)map.individual_votes.get(p) / map.total_votes * 100.0);
         }
         System.out.println("=====================================================================================");

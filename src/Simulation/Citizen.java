@@ -6,6 +6,7 @@ import Utilities.Const;
 import Utilities.Utilities;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * A citizen is a participant in the simulated political system.
@@ -14,16 +15,16 @@ public class Citizen {
 
     public final Constituency constituency;
 
-    public double ideology;            /* The ideology rating for this citizen [0,2]. */
-    public double activation;          /* How activated is this citizen? [0,1] */
-    public double interactivity;       /* How interactive is this citizen? [0,1] */
-    public double confidence;          /* How confident is this citizen in their views? [0,1] */
+    public HashMap<Party, Double> partyOpinions;  /* What parties does this citizen support? */
+    public double activation;                                       /* How activated is this citizen? [0,1] */
+    public double interactivity;                                    /* How interactive is this citizen? [0,1] */
+    public double confidence;                                       /* How confident is this citizen in their views? [0,1] */
 
     private ArrayList memory;           /* The memory of interactions this citizen has */
 
-    public Citizen(Constituency home, double ideology, double confidence, double activation){
+    public Citizen(Constituency home, HashMap<Party, Double> support, double confidence, double activation){
         this.constituency = home;
-        this.ideology = ideology;
+        this.partyOpinions = support;
         this.confidence = confidence;
         this.activation = activation;
     }
@@ -135,22 +136,7 @@ public class Citizen {
         //if the found party is a close match, use it
         if(closest.ideology - ideology < Const.PROXIMITY_VOTING_THRESHOLD) return closest;
 
-        //now for directional voting
-        if(ideology < 1){
-            //a vote for the left
-            if(constituency.country == Country.Northern_Ireland){
-                return Const.sinnFein;
-            } else {
-                return Const.labour;
-            }
-        } else {
-            //a vote for the right
-            if(constituency.country == Country.Northern_Ireland){
-                return Const.DUP;
-            } else {
-                return Const.conservative;
-            }
-        }
+        return closest;
     }
 
     @Override
