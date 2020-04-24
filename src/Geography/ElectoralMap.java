@@ -70,6 +70,7 @@ public class ElectoralMap {
         Const.labour = politicalParties.get(1);
         Const.DUP = politicalParties.get(7);
         Const.sinnFein = politicalParties.get(9);
+        Const.liberalDemocrats = politicalParties.get(2);
 
     }
 
@@ -105,7 +106,7 @@ public class ElectoralMap {
         votes.put("Plaid Cymru"     , new PartyVote("Plaid Cymru", pc, ((double)pc) / turnout));
         votes.put("DUP"             , new PartyVote("DUP", dup, ((double)dup) / turnout));
         votes.put("Sinn Fein"       , new PartyVote("Sinn Fein", sf, ((double)sf) / turnout));
-        votes.put("sinnFein"            , new PartyVote("sinnFein", sdlp, ((double)sdlp) / turnout));
+        votes.put("SDLP"            , new PartyVote("SDLP", sdlp, ((double)sdlp) / turnout));
         votes.put("UUP"             , new PartyVote("UUP", uup, ((double)uup) / turnout));
         votes.put("Alliance"        , new PartyVote("Alliance", alliance, ((double)alliance) / turnout));
         votes.put("Other"           , new PartyVote("Other", other, ((double)other) / turnout));
@@ -322,8 +323,41 @@ public class ElectoralMap {
                     }
                 }
             }
+            c.winningParty = winner;
             electoral_seats.put(winner, electoral_seats.get(winner) + 1);
         }
+    }
+
+    public ArrayList<HashMap<Party, Integer>> getVotesPerNation(){
+        ArrayList<HashMap<Party, Integer>> seats = new ArrayList<>();
+        seats.add(new HashMap<Party, Integer>());   seats.add(new HashMap<Party, Integer>());   seats.add(new HashMap<Party, Integer>());   seats.add(new HashMap<Party, Integer>()); //england, scotland, wales, NI
+
+        ArrayList<Constituency> consts = getAllConstituencies();
+
+        for(Constituency c : consts){
+
+            HashMap<Party, Integer> nationMap = null;
+
+            switch(c.country){
+                case England:
+                    nationMap = seats.get(0);
+                    break;
+                case Scotland:
+                    nationMap = seats.get(1);
+                    break;
+                case Wales:
+                    nationMap = seats.get(2);
+                    break;
+                case Northern_Ireland:
+                    nationMap = seats.get(3);
+                    break;
+            }
+
+            if(!nationMap.containsKey(c.winningParty)) nationMap.put(c.winningParty, 0);
+            nationMap.put(c.winningParty, nationMap.get(c.winningParty) + 1);
+        }
+
+        return seats;
     }
 
 

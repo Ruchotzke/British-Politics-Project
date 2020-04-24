@@ -27,6 +27,9 @@ public class Constituency {
 
     public List<Citizen> citizenList;                           /* The list of simulated civilians */
 
+    public Party winningParty;                                  /* The winning party in the last election */
+    public HashMap<Party, Integer> votesPerParty;               /* The results of the last election. */
+
     /**
      * Construct a new constituency profile.
      * @param constituencySize
@@ -112,7 +115,7 @@ public class Constituency {
         oldTotal = numGenerated;
 
         //now sinnFein
-        for(;numGenerated < oldTotal + voteResult17.get("sinnFein").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
+        for(;numGenerated < oldTotal + voteResult17.get("SDLP").totalVotes * Const.CITIZENS_PER_POPULATION; numGenerated++){
             arr.add(new Citizen(this, Const.IDEOLOGY_SDLP, 1, 1));
         }
         oldTotal = numGenerated;
@@ -224,6 +227,7 @@ public class Constituency {
             results.put(choice, results.get(choice) + 1);
         }
 
+        votesPerParty = results;
         return results;
     }
 

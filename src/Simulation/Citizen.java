@@ -132,8 +132,11 @@ public class Citizen {
                 closest = p;
             }
         }
+
         //if the found party is a close match, use it
-        if(closest.ideology - ideology < Const.PROXIMITY_VOTING_THRESHOLD) return closest;
+        if(closest.ideology - ideology < Const.PROXIMITY_VOTING_THRESHOLD){
+            return closest;
+        }
 
         //now for directional voting
         if(ideology < 1){

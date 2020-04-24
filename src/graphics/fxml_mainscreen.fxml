@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphics.JavaFXController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="British Politics Electoral Simulation">
+         <font>
+            <Font name="Consolas" size="22.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="14.0" layoutY="40.0" prefHeight="750.0" prefWidth="301.0">
+         <content>
+            <VBox fx:id="vbox_Constituencies" prefHeight="741.0" prefWidth="287.0" />
+         </content>
+      </ScrollPane>
+      <Pane layoutX="322.0" layoutY="40.0" prefHeight="322.0" prefWidth="869.0">
+         <children>
+            <Label fx:id="text_constituencyName" layoutX="14.0" layoutY="14.0" text="CONSTITUENCY NAME" />
+            <Label fx:id="text_voteResult" alignment="TOP_LEFT" layoutX="14.0" layoutY="31.0" prefHeight="197.0" prefWidth="579.0" text="VOTE INFORMATION" />
+            <PieChart fx:id="chart_constResult" layoutX="447.0" layoutY="14.0" prefHeight="300.0" prefWidth="408.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

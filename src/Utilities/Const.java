@@ -12,6 +12,7 @@ public class Const {
     public static Party labour;
     public static Party sinnFein;
     public static Party DUP;
+    public static Party liberalDemocrats;
 
     /**
      * The number of citizens simulated per actual
